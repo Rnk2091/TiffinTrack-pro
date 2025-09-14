@@ -1,4 +1,5 @@
 // Import express and types
+import path from 'path';
 import express, { Request, Response } from 'express';
 
 const app = express();
@@ -6,6 +7,8 @@ const PORT = 3000;
 
 // Enable JSON parsing for incoming requests
 app.use(express.json()); // Middleware to parse JSON body
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Add a global array to store orders dynamically 
 
